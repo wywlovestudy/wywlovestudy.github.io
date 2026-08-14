@@ -390,6 +390,8 @@ const lifeCards = [
   },
 ];
 
+const lifeImageSrc = (fileName) => `./assets/life/${fileName}?v=20260814-images-fixed`;
+
 const lifeCardGrid = document.querySelector("#lifeCardGrid");
 const lifeNoteModal = document.querySelector("#lifeNoteModal");
 const lifeImageModal = document.querySelector("#lifeImageModal");
@@ -416,7 +418,7 @@ if (lifeCardGrid && lifeNoteModal && lifeImageModal) {
             <div class="life-card-face life-card-back">
               <div class="life-card-title"><span>${card.title}</span></div>
               <div class="life-gallery">
-                <img src="./assets/life/${card.images[0]}" alt="${card.title}照片 1" data-life-image loading="lazy" />
+                <img src="${lifeImageSrc(card.images[0])}" alt="${card.title}照片 1" data-life-image loading="lazy" />
                 <button class="life-gallery-button life-gallery-button--previous" type="button" data-life-gallery="previous" aria-label="查看${card.title}上一张照片" title="上一张">
                   ${renderGalleryArrow("previous")}
                 </button>
@@ -457,7 +459,7 @@ if (lifeCardGrid && lifeNoteModal && lifeImageModal) {
     const image = cardElement.querySelector("[data-life-image]");
 
     photoIndices.set(cardId, imageIndex);
-    image.src = `./assets/life/${cardData.images[imageIndex]}`;
+    image.src = lifeImageSrc(cardData.images[imageIndex]);
     image.alt = `${cardData.title}照片 ${imageIndex + 1}`;
     cardElement.querySelector("[data-life-count]").textContent = `${imageIndex + 1} / ${cardData.images.length}`;
   };
@@ -467,7 +469,7 @@ if (lifeCardGrid && lifeNoteModal && lifeImageModal) {
     const modalImage = lifeImageModal.querySelector("img");
     activeLifeCardId = cardId;
     photoIndices.set(cardId, imageIndex);
-    modalImage.src = `./assets/life/${cardData.images[imageIndex]}`;
+    modalImage.src = lifeImageSrc(cardData.images[imageIndex]);
     modalImage.alt = `${cardData.title}照片 ${imageIndex + 1}`;
     lifeImageModal.hidden = false;
     document.body.classList.add("life-image-open");
@@ -639,4 +641,3 @@ if (qualityTags) {
     )
     .join("");
 }
-
