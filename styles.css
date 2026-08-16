@@ -1,3 +1,6 @@
+Warning: truncated output (original token count: 31200)
+Total output lines: 6150
+
 :root {
   --bg: #dff1ff;
   --bg-deep: #b9dcfa;
@@ -3073,249 +3076,7 @@ body {
   top: 18%;
   left: 24%;
   width: 12px;
-  height: 7px;
-  content: "";
-  background: rgba(255, 255, 255, 0.72);
-  border-radius: 50%;
-  filter: blur(1px);
-  transform: rotate(-26deg);
-}
-
-#about .about-bubble::after {
-  position: absolute;
-  top: 50%;
-  left: calc(100% + 16px);
-  z-index: 30;
-  width: 224px;
-  padding: 12px 14px;
-  color: #102f50;
-  content: attr(data-detail);
-  background: #ffffff;
-  border: 1px solid rgba(214, 231, 244, 0.96);
-  border-radius: 14px;
-  box-shadow: 0 16px 32px rgba(32, 91, 139, 0.24);
-  font-size: 13px;
-  font-weight: 650;
-  line-height: 1.55;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(-50%) translateX(-8px);
-  transition: opacity 160ms ease, transform 160ms ease;
-}
-
-#about .about-right-bubbles .about-bubble::after {
-  right: calc(100% + 16px);
-  left: auto;
-  text-align: right;
-  transform: translateY(-50%) translateX(8px);
-}
-
-#about .about-bubble:hover,
-#about .about-bubble:focus-visible,
-#about .about-bubble.is-open {
-  z-index: 40;
-  filter: saturate(1.08);
-  box-shadow:
-    inset -10px -12px 22px rgba(52, 145, 215, 0.13),
-    inset 8px 8px 18px rgba(255, 255, 255, 0.56),
-    0 24px 46px rgba(25, 94, 151, 0.26);
-  animation-play-state: paused;
-  transform: scale(1.08) translateY(-4px);
-}
-
-#about .about-bubble:hover::after,
-#about .about-bubble:focus-visible::after,
-#about .about-bubble.is-open::after {
-  opacity: 1;
-  transform: translateY(-50%) translateX(0);
-}
-
-@keyframes bubble-float {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0) rotate(-2deg);
-  }
-
-  50% {
-    transform: translate3d(0, -13px, 0) rotate(2deg);
-  }
-}
-
-@media (max-width: 1120px) {
-  .about-stage.is-active {
-    display: flex;
-    flex-direction: column;
-  }
-
-  #about .about-visual {
-    order: 1;
-  }
-
-  #about .about-left-bubbles {
-    order: 2;
-  }
-
-  #about .about-right-bubbles {
-    order: 3;
-  }
-
-  #about .about-bubble-column {
-    position: relative;
-    top: auto;
-    right: auto;
-    left: auto;
-    width: min(100%, 720px);
-    margin: 10px auto 0;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 14px 22px;
-    transform: none;
-  }
-
-  #about .about-left-bubbles {
-    margin-top: 20px;
-  }
-
-  #about .about-right-bubbles {
-    margin-top: 22px;
-  }
-
-  #about .about-bubble:nth-child(odd),
-  #about .about-bubble:nth-child(even) {
-    align-self: center;
-  }
-
-  #about .about-bubble::after,
-  #about .about-right-bubbles .about-bubble::after {
-    top: calc(100% + 12px);
-    right: auto;
-    left: 50%;
-    width: min(230px, 80vw);
-    text-align: center;
-    transform: translate(-50%, 8px);
-  }
-
-  #about .about-bubble:hover::after,
-  #about .about-bubble:focus-visible::after,
-  #about .about-bubble.is-open::after {
-    transform: translate(-50%, 0);
-  }
-}
-
-@media (max-width: 860px) {
-  .page-shell {
-    width: min(100% - 22px, 760px);
-  }
-
-  .tabbar {
-    margin-bottom: -82px;
-  }
-
-  .about-stage.is-active {
-    min-height: auto;
-    padding-top: 126px;
-  }
-
-  #about .about-visual {
-    min-height: 0;
-  }
-
-  #about .about-core {
-    min-height: 0;
-    padding: 0;
-  }
-
-  #about .about-copy-panel {
-    width: 100%;
-    min-height: 0;
-    padding: 34px 26px 28px;
-  }
-
-  #about .about-portrait {
-    position: relative;
-    right: auto;
-    bottom: auto;
-    width: 276px;
-    height: 390px;
-    margin: 12px auto -12px;
-  }
-
-  #about .about-bubble-column {
-    margin-top: 30px;
-  }
-}
-
-@media (max-width: 560px) {
-  .tabbar {
-    margin-bottom: -96px;
-  }
-
-  .about-stage.is-active {
-    padding-right: 14px;
-    padding-left: 14px;
-  }
-
-  #about h1 {
-    font-size: 52px;
-  }
-
-  #about .hero-summary {
-    font-size: 16px;
-  }
-
-  #about .education {
-    font-size: 14px;
-  }
-
-  #about .education span {
-    margin: 0 5px;
-  }
-
-  #about .hero-actions {
-    flex-direction: column;
-  }
-
-  #about .primary-action,
-  #about .secondary-action {
-    width: 100%;
-  }
-
-  #about .about-bubble-column {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    width: min(100%, 340px);
-    gap: 16px;
-  }
-
-  #about .about-bubble,
-  #about .about-bubble:nth-child(2),
-  #about .about-bubble:nth-child(3),
-  #about .about-bubble:nth-child(4),
-  #about .about-bubble:nth-child(5) {
-    width: 112px;
-    min-height: 112px;
-    justify-self: center;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  #about .about-bubble {
-    animation: none;
-  }
-}
-
-/* Final visual correction: keep the sky soft and the bubbles outside the copy. */
-.sky-scene .sun-face {
-  display: none;
-}
-
-.about-stage.is-active::before {
-  background:
-    radial-gradient(circle at 7% 31%, rgba(255, 255, 255, 0.72) 0 2.5%, transparent 2.7%),
-    radial-gradient(circle at 14% 28%, rgba(255, 255, 255, 0.78) 0 4.7%, transparent 4.9%),
-    radial-gradient(circle at 22% 32%, rgba(255, 255, 255, 0.62) 0 3.6%, transparent 3.8%),
-    radial-gradient(ellipse at 14% 34%, rgba(255, 255, 255, 0.58) 0 9%, transparent 9.5%),
+  heig…1200 tokens truncated…ellipse at 14% 34%, rgba(255, 255, 255, 0.58) 0 9%, transparent 9.5%),
     radial-gradient(ellipse 24% 12% at 12% 31%, rgba(255, 255, 255, 0.82) 0 34%, transparent 72%),
     radial-gradient(ellipse 27% 14% at 77% 26%, rgba(255, 255, 255, 0.68) 0 30%, transparent 74%),
     radial-gradient(ellipse 35% 17% at 77% 92%, rgba(255, 255, 255, 0.5) 0 26%, transparent 76%),
@@ -5958,6 +5719,193 @@ html:has(#skills.tab-panel.is-active) {
   .life-image-close {
     transition: none;
     animation: none;
+  }
+}
+
+/* Mobile composition: keep the portrait inside the card and lay skills out without collisions. */
+@media (max-width: 860px) {
+  body:has(#skills.tab-panel.is-active),
+  html:has(#skills.tab-panel.is-active) {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  #skills.tab-panel.is-active {
+    height: auto;
+    min-height: 100svh;
+    margin-top: 0;
+    padding: 126px 18px 42px;
+    overflow: visible;
+  }
+
+  #skills .skills-stage {
+    height: auto;
+    min-height: 0;
+    padding: 10px 0 28px;
+  }
+
+  #skills .skill-ball-pit {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    width: min(100%, 620px);
+    height: auto;
+    min-height: 0;
+    margin: 0 auto;
+    padding: 18px 0 24px;
+    gap: 14px 10px;
+    align-items: center;
+    justify-items: center;
+  }
+
+  #skills .skill-ball,
+  #skills .skill-ball[data-skill="Xmind"],
+  #skills .skill-ball--general,
+  #skills .skill-ball:hover,
+  #skills .skill-ball:focus-visible,
+  #skills .skill-ball.is-selected,
+  #skills .skill-ball--general:hover,
+  #skills .skill-ball--general:focus-visible,
+  #skills .skill-ball--general.is-selected {
+    position: relative;
+    inset: auto;
+    left: auto;
+    top: auto;
+    width: min(100%, 108px);
+    height: auto;
+    aspect-ratio: 1;
+    margin: 0;
+    transform: none;
+  }
+
+  #skills .skill-ball:hover,
+  #skills .skill-ball:focus-visible,
+  #skills .skill-ball.is-selected,
+  #skills .skill-ball--general:hover,
+  #skills .skill-ball--general:focus-visible,
+  #skills .skill-ball--general.is-selected {
+    transform: scale(1.04);
+  }
+}
+
+@media (max-width: 600px) {
+  #about .about-visual {
+    width: 100%;
+    overflow: visible;
+  }
+
+  #about .about-core {
+    position: relative;
+    display: block;
+    width: 100%;
+  }
+
+  #about .about-copy-panel {
+    width: 100%;
+    padding: 28px 18px 24px;
+  }
+
+  #about .intro-line,
+  #about h1,
+  #about .hero-summary,
+  #about .education {
+    width: calc(100% - 142px);
+    max-width: none;
+  }
+
+  #about h1 {
+    font-size: clamp(40px, 12vw, 50px);
+    white-space: nowrap;
+  }
+
+  #about .hero-summary {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  #about .education {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  #about .about-portrait {
+    position: absolute;
+    top: 42px;
+    right: 2px;
+    bottom: auto;
+    z-index: 5;
+    width: 150px;
+    height: 190px;
+    margin: 0;
+    pointer-events: none;
+  }
+
+  #about .about-portrait img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center bottom;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  #about .contact-stack {
+    position: relative;
+    z-index: 6;
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  #skills.tab-panel.is-active {
+    padding: 122px 14px 36px;
+  }
+
+  #skills .skills-heading h2 {
+    font-size: clamp(42px, 13vw, 50px);
+  }
+
+  #skills .skill-ball-pit {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    width: 100%;
+    padding-top: 16px;
+    gap: 10px 6px;
+  }
+
+  #skills .skill-ball,
+  #skills .skill-ball[data-skill="Xmind"],
+  #skills .skill-ball--general {
+    width: min(100%, 82px);
+    padding: 7px;
+    font-size: clamp(10px, 2.9vw, 13px);
+  }
+
+  #skills .skill-ball[data-skill="Python"] span {
+    font-size: clamp(10px, 2.9vw, 13px);
+  }
+}
+
+@media (max-width: 380px) {
+  #about .intro-line,
+  #about h1,
+  #about .hero-summary,
+  #about .education {
+    width: calc(100% - 130px);
+  }
+
+  #about .about-portrait {
+    right: 0;
+    width: 138px;
+    height: 176px;
+  }
+
+  #skills .skill-ball-pit {
+    gap: 9px 5px;
+  }
+
+  #skills .skill-ball,
+  #skills .skill-ball[data-skill="Xmind"],
+  #skills .skill-ball--general {
+    width: min(100%, 74px);
   }
 }
 
